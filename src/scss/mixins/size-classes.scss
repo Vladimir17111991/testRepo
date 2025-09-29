@@ -1,0 +1,9 @@
+@use '/src/scss/globals' as *;
+
+@mixin size-classes($map, $variable-name, $base-size) {
+  @each $name, $value in $map {
+    &--#{$name} {
+      --#{$variable-name}: #{em($value, $base-size)};
+    }
+  }
+}

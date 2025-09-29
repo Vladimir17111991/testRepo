@@ -1,0 +1,53 @@
+@use 'sass:string';
+
+@function hsl-clr($color, $h: 0, $s: 0%, $l: 0%) {
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color + '-h'});
+  $color-s: var(#{$color + '-s'});
+  $color-l: var(#{$color + '-l'});
+
+  @return hsl(calc(#{$color-h} + #{$h}), calc(#{$color-s} + #{$s}), calc(#{$color-l} + #{$l}));
+}
+
+@function hsla-clr($color, $opacity, $h: 0, $s: 0%, $l: 0%) {
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-h: var(#{$color + '-h'});
+  $color-s: var(#{$color + '-s'});
+  $color-l: var(#{$color + '-l'});
+
+  @return hsla(
+    calc(#{$color-h} + #{$h}),
+    calc(#{$color-s} + #{$s}),
+    calc(#{$color-l} + #{$l}),
+    $opacity
+  );
+}
+
+// contrast color from hsl
+@function contrast-clr($color, $l: 0%, $threshold: 55%) {
+  $color: str-replace($color, 'var(');
+  $color: str-replace($color, ')');
+  $color-l: var(#{$color + '-l'});
+
+  @return hsl(0, 0%, calc((#{$color-l} + #{$l} - #{$threshold}) * -100));
+}
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: string.index($string, $search);
+
+  @if $index {
+    $before-replace: string.slice($string, 1, $index - 1);
+    $after-replace: str-replace(
+      string.slice($string, $index + string.length($search)),
+      $search,
+      $replace
+    );
+    @return $before-replace + $replace + $after-replace;
+  }
+
+  @return $string;
+}

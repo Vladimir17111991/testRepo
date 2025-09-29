@@ -1,0 +1,26 @@
+{
+  "alias": {
+    "~": "",
+    "assets": "./web/assets",
+    "svg": "./web/assets/svg",
+    "sounds": "./web/assets/sounds",
+    "@": "./src/js",
+    "components": "./src/js/components",
+    "consts": "./src/js/consts",
+    "helpers": "./src/js/helpers",
+    "api": "./src/js/api",
+    "entities": "./src/js/entities",
+    "live-casino": "./src/js/live-casino",
+    "ElCasino": "./src/js/ElCasino",
+    "BetOnGames": "./src/js/BetOnGames",
+    "LiveGames": "./src/js/LiveGames",
+    "new-components": "./src/js/new-components",
+    "pages": "./src/js/pages",
+    "services": "./src/js/services",
+    "burnToHell": "./src/js/burnToHell.js",
+    "index": "./src/js/index.js",
+    "promo": "./src/js/promo",
+    "Video": "./src/js/Video"
+  },
+  "extensions": [".js", ".ts", ".json"]
+}

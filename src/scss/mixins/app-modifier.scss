@@ -1,0 +1,13 @@
+@use 'sass:list';
+
+@mixin app-modifier($selectors...) {
+  $combined-selectors: ();
+
+  @each $selector in $selectors {
+    $combined-selectors: list.append($combined-selectors, '.app.#{$selector}', comma);
+  }
+
+  :where(#{$combined-selectors}) & {
+    @content;
+  }
+}

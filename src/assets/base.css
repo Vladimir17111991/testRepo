@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  box-sizing: content-box;
+  padding: 0;
+  min-width: 375px;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow-y: auto;
+
+  font-family: Roboto, Arial, sans-serif;
+
+  /* @media (width >= 1880px) { */
+
+  /*  height: 100%; */
+
+  /*  min-height: 1080px; */
+
+  /* } */
+
+  /* scrollbar-gutter: stable; */
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
