@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+       <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:; 
+                   script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data:;
+                   style-src 'self' 'unsafe-inline' https:;
+                   connect-src 'self' https: wss:;">
     <link rel="stylesheet" href="/src/scss/fonts/roboto.scss">
     <title>TestTask</title>
   </head>
   <body>
         <div id="app" class="app"></div>
   </body>
-     <script type="module"  src="main.ts"></script>
+     <script  type="module"  src="main.js"></script>
 </html>
 <style>
 .app {
